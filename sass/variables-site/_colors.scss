@@ -1,0 +1,42 @@
+// Color Shades
+$color__light_shade: #F3F3F1;
+$color__light_accent: #8A9293;
+$color__main_brand: #8E847E;
+$color__dark_accent: #838384;
+$color__dark_shade: #272B30;
+
+// Custom variables
+$color__primary: $color__main_brand;
+$color__secondary: $color__light_accent;
+$color__body-text: $color__dark_shade;
+$color__black-header: $color__dark_shade;
+// $color__light-black: #929292;
+// $color__muted: #636c72;
+// $color__gray-lighter: #eceeef;
+
+// Default variables with _s
+$color__background-body: $color__light_shade;
+$color__background-screen: $color__light_shade;
+$color__background-hr: $color__main_brand;
+$color__background-button: $color__main_brand;
+// $color__background-pre: #eee;
+// $color__background-ins: #fff9c0;
+
+$color__text-screen: $color__black-header;
+$color__text-input: $color__black-header;
+$color__text-input-focus: $color__black-header;
+$color__link: $color__main_brand;
+$color__link-visited: $color__main_brand;
+$color__link-hover: $color__dark_accent;
+$color__text-main: $color__body-text;
+
+$color__border-button: $color__main_brand;
+$color__border-button-hover: $color__dark_accent;
+$color__border-button-focus: $color__dark_accent;
+$color__border-input: $color__main_brand;
+$color__border-abbr: $color__main_brand;
+
+
+$brand-primary: $color__main_brand;
+
+$fa-font-path: "fonts/font-awesome/";

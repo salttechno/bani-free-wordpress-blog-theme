@@ -1,0 +1,269 @@
+/*--------------------------------------------------------------
+# GENERAL
+--------------------------------------------------------------*/
+body {
+    text-rendering: optimizeLegibility !important;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    // background: lighten($color__dark_shade, 2.5%);
+    letter-spacing: .25px;
+}
+a {
+    transition: all 0.4s ease;
+    color: $color__main_brand;
+    &:hover, &:active, &:focus {
+        text-decoration: none;
+        color: darken($color__main_brand, 20%);
+    }
+}
+p {
+    margin-bottom: 1.6rem;
+    a {
+        color: $color__main_brand;
+        &:hover, &:active {
+            text-decoration: none;
+            color: $color__black-header;
+        }
+    }
+}
+li {
+    margin-bottom: 1rem;
+}
+.card-block {
+    padding: 1.5rem;
+}
+
+
+
+/*--------------------------------------------------------------
+# INDEX
+--------------------------------------------------------------*/
+.st-content-area {
+    word-wrap: break-word;
+    margin-top: 54px;
+}
+.entry-title {
+    a {
+        color: $color__dark_shade;
+        font-style: italic;
+        &:hover {
+            color: $color__dark_accent;
+        }
+    }
+}
+.card-columns {
+    width: 100%;
+    padding: 0 15px;
+    @include media-breakpoint-only(sm) {
+        column-count: 1;
+    }
+    @include media-breakpoint-only(md) {
+        column-count: 2;
+    }
+    @include media-breakpoint-only(lg) {
+        column-count: 2;
+    }
+    @include media-breakpoint-only(xl) {
+        column-count: 2;
+    }
+}
+.st-primary-wrapper {
+    margin-top: 2rem;
+}
+.bani-sidebar {
+    margin-top: 2rem;
+}
+.bani-card {
+    border: 0px;
+    box-shadow: 0 20px 20px rgba($color__dark_shade,.08);
+}
+.hentry {
+    margin-bottom: 2.5rem;
+    .entry-summary {
+        color: lighten($color__body-text, 20%);
+        font-size: 1rem;
+    }
+}
+.post-hover-effect {
+    .hentry {
+        transition: all 0.4s ease;
+        &:hover {
+            box-shadow: 0 30px 30px rgba($color__dark_shade,.12);
+            transform: translate(0,-10px);
+            transition-delay: 0s !important;
+        }
+    }
+}
+.card-footer {
+    font-size: .875rem;
+    background: transparent;
+    border-color: darken($color__light_shade, 5%);
+}
+.cat-links {
+    text-transform: uppercase;
+    a {
+        margin-right: 1rem;
+    }
+}
+.comments-link {
+    margin-left: 1rem;
+}
+.bani-badge-secondary {
+    background: darken($color__light_shade, 5%);
+    padding: .25rem .5rem;
+    margin-right: .5rem;
+    font-size: .75rem;
+    font-weight: normal;
+}
+
+
+
+/*--------------------------------------------------------------
+# HEADER
+--------------------------------------------------------------*/
+.st-header-area {
+    background: #ffffff;
+    box-shadow: 0 8px 14px rgba($color__dark_shade,.08);
+}
+.main-navigation li {
+    margin-bottom: 0;
+    float: none;
+    display: inline-block;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: .875rem;
+    letter-spacing: .5px;
+}
+.main-navigation .sub-menu {
+    background: #ffffff;
+    text-align: left;
+    box-shadow: 0 8px 14px rgba($color__dark_shade,.08);
+    border-radius: 0 0 .25rem .25rem;
+    li {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+    .sub-menu {
+        border-radius: .25rem 0 0 .25rem;
+    }
+}
+.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+    right: 100%;
+    left: auto;
+}
+.site-title {
+    font-style: italic;
+}
+.menu-item-has-children a {
+    .fa {
+        line-height: 21px;
+        font-size: .60rem;
+    }
+}
+.sub-menu .menu-item-has-children a {
+    .fa-chevron-down:before {
+        content: '\f054';
+    }
+}
+@media (max-width: 599px) {
+    .main-navigation li {
+        float: none;
+    }
+    .main-navigation ul ul {
+        position: relative;
+        float: none;
+        display: none !important;
+        box-shadow: none !important;
+    }
+    .bani-main-menu .menu-item-has-children > .showSubMenu {
+        left: 30px;
+        top: 0;
+        display: block !important;
+    }
+    .bani-main-navbar.appear-fixed-on-scroll {
+        display: none;
+    }
+    button.menu-toggle.btn {
+        margin: auto;
+    }
+}
+
+
+
+
+/*--------------------------------------------------------------
+# COVER
+--------------------------------------------------------------*/
+.bani-cover-wrapper {
+    min-height: 50vh;
+    position: relative;
+    overflow-y: hidden;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-bottom: 2rem;
+    .bani-cover-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        width: 100vw;
+        background: darken($color__dark_accent, 10%);
+        background-size: cover;
+        background-position: 50% 50%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        // filter: brightness(.5);
+    }
+    .bani-cover-content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9;
+        min-width: 100%;
+        /* text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5); */
+        color: $color__light_shade;
+        text-align: center;
+        .sub-title {
+            color: lighten($color__dark_accent, 25%);
+            margin-bottom: 1rem;
+            font-family: 'Source Sans Pro', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.25rem;
+            letter-spacing: .5px;
+        }
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+.typed-cursor{
+	opacity: 1;
+	-webkit-animation: blink 0.7s infinite;
+	-moz-animation: blink 0.7s infinite;
+	animation: blink 0.7s infinite;
+}
+@keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+@-moz-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
