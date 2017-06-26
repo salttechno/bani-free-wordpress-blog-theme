@@ -13,6 +13,22 @@
 
 	<div class="card bani-card">
 
+		<?php if ( has_post_thumbnail() ) : ?>
+	        <?php if ( !is_single() ) : ?>
+	    		<a href="<?php echo get_permalink() ?>" title="<?php the_title_attribute(); ?>" class="shreeja-thumb-link">
+	                <?php the_post_thumbnail( 'post-thumbnail', ['class' => 'card-img-top d-block img-fluid w-100']); ?>
+	            </a>
+	        <?php endif; ?>
+		<?php else : ?>
+			<?php if ( get_theme_mod( 'shreeja_default_image_home' ) ) : ?>
+				<?php if ( !is_single() ) : ?>
+		    		<a href="<?php echo get_permalink() ?>" title="<?php the_title_attribute(); ?>" class="shreeja-thumb-link">
+		                <img src="<?php echo get_template_directory_uri() . '/images/default-img.png'; ?>" alt="<?php the_title_attribute(); ?>" class="card-img-top d-block img-fluid w-100">
+		            </a>
+		        <?php endif; ?>
+			<?php endif; ?>
+		<?php endif; ?>
+
 		<div class="card-block">
 			<header class="entry-header">
 				<?php

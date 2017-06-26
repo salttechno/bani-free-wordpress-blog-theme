@@ -17,7 +17,7 @@ get_header(); ?>
 <div class="bani-cover-wrapper">
 	<div class="bani-cover-bg"></div><!-- /.bani-cover -->
 	<div class="bani-cover-content row align-items-center justify-content-center">
-		<div class="col-md-6">
+		<div class="col-md-6 bani-content-height">
 			<h5 class="sub-title">Welcome to my blog!</h5>
 			<h3 class="title">I am a <span id="typed">Blogger!</span></h3>
 			<div id="typed-strings">
@@ -87,38 +87,7 @@ get_header(); ?>
 					?>
 
 
-				<?php elseif ( get_theme_mod( 'bani_home_layout' ) == 'masonry' ) : ?>
-
-					<div class="row">
-						<div class="card-columns">
-							<?php
-							/* Start the Loop */
-							$counter = 0;
-							$default_posts_per_page = get_option( 'posts_per_page' );
-
-							$subscribe_post_pos = rand(1, $default_posts_per_page);
-
-							while ( have_posts() ) : the_post();
-
-								get_template_part( 'template-parts/content', get_post_format() );
-
-								if ( $counter == $subscribe_post_pos ) {
-									if ( is_active_sidebar( 'sidebar-subscribe-post' ) ) : ?>
-										<div id="footer-instagram">
-											<?php dynamic_sidebar( 'sidebar-subscribe-post' ) ?>
-										</div>
-									<?php endif;
-								}
-
-								$counter++;
-
-							endwhile;
-							?>
-						</div>
-					</div>
-
-
-				<?php else : ?>
+				<?php elseif ( get_theme_mod( 'bani_home_layout' ) == 'grid' ) : ?>
 
 					<div class="row">
 						<?php
@@ -151,6 +120,37 @@ get_header(); ?>
 
 						endwhile;
 						?>
+					</div>
+
+
+				<?php else : ?>
+
+					<div class="row">
+						<div class="card-columns">
+							<?php
+							/* Start the Loop */
+							$counter = 0;
+							$default_posts_per_page = get_option( 'posts_per_page' );
+
+							$subscribe_post_pos = rand(1, $default_posts_per_page);
+
+							while ( have_posts() ) : the_post();
+
+								get_template_part( 'template-parts/content', get_post_format() );
+
+								if ( $counter == $subscribe_post_pos ) {
+									if ( is_active_sidebar( 'sidebar-subscribe-post' ) ) : ?>
+										<div id="footer-instagram">
+											<?php dynamic_sidebar( 'sidebar-subscribe-post' ) ?>
+										</div>
+									<?php endif;
+								}
+
+								$counter++;
+
+							endwhile;
+							?>
+						</div>
 					</div>
 
 				<?php endif; ?>

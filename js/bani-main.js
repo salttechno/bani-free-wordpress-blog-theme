@@ -40,4 +40,8 @@ jQuery(document).ready(function($) {
         loop: true
 	});
 
+    // Check cover content height
+    var coverContentHt = $('.bani-content-height').height();
+    $('.bani-cover-wrapper').height(coverContentHt);
+
 });

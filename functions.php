@@ -72,10 +72,28 @@ function bani_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'bani' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'bani' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '<section id="%1$s" class="widget card %2$s"><div class="card-block">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>',
+	) );
+	register_sidebar(array(
+		'name' => esc_html__('Subscribe Post', 'bani'),
+		'id' => 'sidebar-subscribe-post',
+		'before_widget' => '<div id="%1$s" class="subscribe-post-widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="subscribe-post-title">',
+		'after_title' => '</h4>',
+		'description' => esc_html__('Display a "Subscription form" randomly in between posts loop.', 'bani'),
+	) );
+    register_sidebar(array(
+		'name' => esc_html__('Instagram Footer', 'bani'),
+		'id' => 'sidebar-footer',
+		'before_widget' => '<div id="%1$s" class="instagram-widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="instagram-title">',
+		'after_title' => '</h4>',
+		'description' => esc_html__('Add the "Instagram" widget here. You need to install "WP Instagram" plugin first. TIP: For best result, set number of photos to 10.', 'bani'),
 	) );
 }
 add_action( 'widgets_init', 'bani_widgets_init' );

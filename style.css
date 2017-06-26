@@ -16735,10 +16735,6 @@ li {
   }
 }
 
-.st-primary-wrapper {
-  margin-top: 2rem;
-}
-
 .bani-sidebar {
   margin-top: 2rem;
 }
@@ -16756,6 +16752,11 @@ li {
 .hentry .entry-summary {
   color: #555d68;
   font-size: 1rem;
+}
+
+.hentry .entry-meta {
+  font-size: 1rem;
+  color: #555d68;
 }
 
 .post-hover-effect .hentry {
@@ -16799,6 +16800,12 @@ li {
   margin-right: .5rem;
   font-size: .75rem;
   font-weight: normal;
+}
+
+@media (min-width: 576px) {
+  .card-columns .card {
+    margin-bottom: 0;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -16893,6 +16900,10 @@ li {
   margin-bottom: 2rem;
 }
 
+.bani-cover-wrapper.short-cover {
+  min-height: 20vh;
+}
+
 .bani-cover-wrapper .bani-cover-bg {
   position: absolute;
   left: 0;
@@ -16919,6 +16930,8 @@ li {
   /* text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5); */
   color: #F3F3F1;
   text-align: center;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .bani-cover-wrapper .bani-cover-content .sub-title {
@@ -16976,6 +16989,407 @@ li {
   100% {
     opacity: 1;
   }
+}
+
+/*--------------------------------------------------------------
+# WIDGETS
+--------------------------------------------------------------*/
+.subscribe-post-widget .bani-subscribe-card {
+  background: #838384;
+  color: #F3F3F1;
+  margin-bottom: 1.5em;
+  border: 0px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.subscribe-post-widget .bani-subscribe-card h5 {
+  margin-bottom: .75rem;
+}
+
+.subscribe-post-widget .bani-subscribe-card .form-control {
+  padding: .5rem 1rem;
+  font-family: "Source Sans Pro", sans-serif;
+  margin: auto;
+}
+
+.subscribe-post-widget .bani-subscribe-card .btn-secondary {
+  background: #F3F3F1;
+  color: #838384;
+  font-family: "Bitter", serif;
+  border: 0;
+  cursor: pointer;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.subscribe-post-widget .bani-subscribe-card .btn-secondary:hover {
+  background: #8E847E;
+  color: #F3F3F1;
+}
+
+.subscribe-post-widget .mc4wp-response {
+  color: #F3F3F1;
+  font-size: .875rem;
+}
+
+.widget.card {
+  /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); */
+  /* border: 0; */
+  border-color: #e7e7e3;
+}
+
+.widget.card ul {
+  margin-left: 0rem;
+  padding-left: 0rem;
+  list-style: none;
+}
+
+.widget.card ul.children {
+  padding: 10px 0px 0px 20px;
+}
+
+.widget.card ul li {
+  margin-bottom: .875rem;
+  /* font-family: $headings-font-family; */
+  font-size: .875rem;
+}
+
+.widget.card ul li .post-date {
+  display: block;
+  font-size: 0.75rem;
+  color: #8E847E;
+}
+
+.widget.card ul li a {
+  color: #838384;
+}
+
+.widget.card ul li a:hover {
+  color: #272B30;
+}
+
+.widget.card .calendar_wrap table {
+  font-size: .875rem;
+  margin-bottom: .5rem;
+}
+
+.widget.card .calendar_wrap caption {
+  caption-side: top;
+  text-align: center;
+  font-family: "Bitter", serif;
+}
+
+.widget.card .calendar_wrap thead th {
+  text-align: center;
+}
+
+.widget.card .calendar_wrap tbody td {
+  text-align: center;
+  /* color: $color__muted; */
+  padding: 5px 0;
+}
+
+.widget.card .calendar_wrap tbody td a {
+  color: #F3F3F1;
+  background: #8E847E;
+  border-radius: 50%;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.widget.card .calendar_wrap tfoot {
+  font-family: "Bitter", serif;
+}
+
+.widget.card .calendar_wrap tfoot:before {
+  content: '';
+  display: block;
+  height: 10px;
+}
+
+.widget.card .calendar_wrap tfoot td#next {
+  text-align: right;
+}
+
+.widget.card .calendar_wrap a {
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.widget.card .calendar_wrap a:hover {
+  text-decoration: none;
+}
+
+.widget.card.widget_search .form-control.s {
+  font-size: .875rem;
+  padding: 3px 12px;
+  border: 0px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.widget.card.widget_search .search-button {
+  border: 0px;
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: .25rem;
+}
+
+.widget.card.widget_search .search-button .fa {
+  font-size: .875rem;
+}
+
+.widget.card > .card-block > div > ul li a:before, .widget.card > .card-block > ul li a:before, .widget.card > .card-block > ul li:before, .widget_calendar caption:before {
+  font-family: FontAwesome;
+  font-size: 13px;
+  margin-right: 8px;
+  color: #8E847E;
+  display: inline-block !important;
+  width: 1em;
+  text-align: center;
+}
+
+.widget_categories > .card-block > ul > li a:before {
+  content: "\f115";
+}
+
+.widget_archive > .card-block > ul > li a:before {
+  content: "\f073";
+}
+
+.widget_recent_comments > .card-block > ul > li > span:before {
+  content: "\f27b";
+  font-family: FontAwesome;
+  font-size: 13px;
+  margin-right: 8px;
+  color: #8E847E;
+  display: inline-block !important;
+  width: 1em;
+  text-align: center;
+}
+
+.widget_meta > .card-block > ul > li a:before {
+  content: "\f0c1";
+}
+
+.widget_recent_entries > .card-block > ul > li a:before {
+  content: "\f0f6";
+}
+
+.widget_pages > .card-block > ul > li a:before {
+  content: "\f0f6";
+}
+
+.widget_nav_menu > .card-block > div > ul > li a:before {
+  content: "\f0f6";
+}
+
+.tp_recent_tweets li {
+  font-size: .8rem !important;
+  margin-bottom: .25rem !important;
+}
+
+.tp_recent_tweets li a {
+  font-weight: normal !important;
+}
+
+.bani_about_widget > .card-block {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.bani_about_widget .widget-title {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.bani_about_widget .bani-about-widget .card-block {
+  padding-bottom: 0;
+}
+
+.bani_latest_posts_widget .recent-post-img {
+  width: 80px;
+  height: 80px;
+}
+
+.bani_latest_posts_widget .rp-date, .bani_latest_posts_widget .rp-author {
+  display: block;
+  font-size: 0.75rem;
+  color: #8E847E;
+}
+
+.bani_latest_posts_widget .media {
+  margin-bottom: 1rem;
+}
+
+.bani_latest_posts_widget h6 a {
+  font-size: .875rem;
+  color: #838384;
+}
+
+.bani_link_box_widget .card-header {
+  display: none;
+}
+
+.bani_link_box_widget .card-block {
+  padding: 0;
+}
+
+.bani-link-box .card-img-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.bani-link-box .card-img-overlay h5 {
+  color: #F3F3F1;
+}
+
+.widget.card.widget_mc4wp_form_widget {
+  background: rgba(0, 0, 0, 0.5);
+  color: #F3F3F1;
+}
+
+.widget.card.widget_mc4wp_form_widget > .card-block {
+  padding: 0;
+}
+
+.widget.card.widget_mc4wp_form_widget .bani-subscribe-card {
+  text-align: center;
+  border: 0px;
+  background: transparent;
+}
+
+.widget.card.widget_mc4wp_form_widget .bani-subscribe-card .form-control {
+  font-size: .875rem;
+  padding: 12px 12px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.widget.card.widget_mc4wp_form_widget .bani-subscribe-card .btn {
+  cursor: pointer;
+  font-size: .75rem;
+}
+
+.widget.card.widget_mc4wp_form_widget .bani-subscribe-card .title .fa {
+  margin-right: .5rem;
+  margin-bottom: .5rem;
+}
+
+.widget.card.widget_mc4wp_form_widget .btn-secondary {
+  background: #F3F3F1;
+  color: #838384;
+  font-family: 'Montserrat', sans-serif;
+  border: 0;
+  cursor: pointer;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.widget.card.widget_mc4wp_form_widget .btn-secondary:hover {
+  background: #8E847E;
+  color: #F3F3F1;
+}
+
+.widget.card.widget_mc4wp_form_widget .mc4wp-response {
+  padding: 0 15px;
+  font-size: .875rem;
+  text-align: center;
+}
+
+.fb_iframe_widget {
+  text-align: center;
+}
+
+.widget.card.widget_fbw_id .card-block {
+  padding: 0;
+}
+
+/*--------------------------------------------------------------
+# FOOTER
+--------------------------------------------------------------*/
+.st-footer-area {
+  margin-top: 2rem;
+  background: #272B30;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.st-footer-area > .container {
+  padding: 2rem 0;
+}
+
+.st-footer-area h6 {
+  font-size: .75rem;
+  letter-spacing: .75px;
+}
+
+.st-footer-area a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.st-footer-area a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.st-footer-area .social-links-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.st-footer-area .social-links-footer ul li a {
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.st-footer-area .social-links-footer ul li a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.st-footer-area .scroll-to-top {
+  position: fixed;
+  right: 15px;
+  bottom: -60px;
+  background: #272B30;
+  width: 35px;
+  height: 35px;
+  color: #F3F3F1;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+#footer-instagram .instagram-widget .instagram-title {
+  display: none;
+}
+
+#footer-instagram .instagram-widget ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#footer-instagram .instagram-widget ul li {
+  display: inline-block;
+  width: 10%;
+}
+
+#footer-instagram .instagram-widget ul li img {
+  max-width: 100%;
+}
+
+#footer-instagram .instagram-widget p {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
