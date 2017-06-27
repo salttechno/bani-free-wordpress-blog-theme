@@ -19,6 +19,10 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+    // Adjust margin-top
+    var headerHt = $('.st-header-area').height();
+    $('.st-content-area').css('margin-top', headerHt);
+
     // For Scroll to top
     $(".scroll-to-top").on("click", function() {
 		return $("html, body").animate({
@@ -34,6 +38,13 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         // console.log(this);
         $(this).parent().parent().find(" > .sub-menu").toggleClass("showSubMenu");
+    });
+
+    // For Featured Posts
+    var featuredPosts = new Swiper('.gallery-top', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 10,
     });
 
     // Initialize typed js

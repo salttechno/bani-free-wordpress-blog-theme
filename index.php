@@ -2,48 +2,56 @@
 /**
  * The main template file
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
  * @package Bani
  */
 
 get_header(); ?>
 
-<div class="bani-cover-wrapper">
-	<div class="bani-cover-bg"></div><!-- /.bani-cover -->
-	<div class="bani-cover-content row align-items-center justify-content-center">
-		<div class="col-md-6 bani-content-height">
-			<h5 class="sub-title">Welcome to my blog!</h5>
-			<h3 class="title">I am a <span id="typed">Blogger!</span></h3>
-			<div id="typed-strings">
-				<p>Father...</p>
-			    <p>Son...</p>
-				<p>Writer...</p>
-				<p>Designer...</p>
-				<p>Developer...</p>
-			    <p>Blogger!</p>
-			</div>
-			<p>This is a perfect place to introduce yourself and this blog. You can easily customize this text from WordPress admin panel. If you want, you can disable this section. You can also customize colors used for this template easily.</p>
-		</div><!-- /.col -->
-	</div><!-- /.bani-cover-content -->
-</div>
 
 <?php if ( is_home() ) : ?>
-	<?php if( ! get_theme_mod( 'bani_hide_featured_posts' ) ) : ?>
-		<?php get_template_part( 'inc/featured-posts' ); ?>
+	<?php if( ! get_theme_mod( 'bani_hide_cover_section' ) ) : ?>
+		<div class="bani-cover-wrapper">
+			<div class="bani-cover-bg"></div><!-- /.bani-cover -->
+			<div class="bani-cover-content row align-items-center justify-content-center">
+				<div class="col-md-6 bani-content-height">
+					<h5 class="sub-title"><?php echo wp_kses_post(get_theme_mod('bani_cover_subtitle', 'Welcome to my blog!')); ?></h5>
+					<h3 class="title"><?php echo wp_kses_post(get_theme_mod('bani_cover_static_title', 'I am a')); ?> <span id="typed"></span></h3>
+					<?php
+						$typing_strings = array("Father...","Son...","Writer...","Designer...","Developer...","Blogger!");
+						if ( get_theme_mod( 'bani_cover_typer_title' ) ) {
+							$typing_strings = explode( ",", get_theme_mod( 'bani_cover_typer_title' ) );
+						}
+					?>
+					<div id="typed-strings">
+						<?php
+							foreach ($typing_strings as $single_string) {
+								echo "<p>" . $single_string . "</p>";
+							}
+						?>
+					</div>
+					<p><?php echo wp_kses_post(get_theme_mod('bani_cover_paragraph', 'This is a perfect place to introduce yourself and this blog. You can easily customize this text from WordPress admin panel. If you want, you can disable this section. You can also customize colors used for this template easily.')); ?></p>
+				</div><!-- /.col -->
+			</div><!-- /.bani-cover-content -->
+		</div>
+
+		<div class="w-100"></div>
+	<?php else : ?>
+		<div class="w-100 height-54"></div>
 	<?php endif; ?>
 <?php endif; ?>
+
 
 <?php if ( !get_theme_mod( 'bani_full_width_home' ) && get_theme_mod( 'bani_left_sidebar_home' ) ) : ?>
 	<?php get_sidebar(); ?>
 <?php endif; ?>
 
 	<div class="st-primary-wrapper post-hover-effect <?php if ( get_theme_mod( 'bani_full_width_home' ) ) : echo 'col-md-12'; else : echo 'col-md-9'; endif; ?>">
+
+		<?php if ( is_home() ) : ?>
+			<?php if( ! get_theme_mod( 'bani_hide_featured_posts' ) ) : ?>
+				<?php get_template_part( 'inc/featured-posts' ); ?>
+			<?php endif; ?>
+		<?php endif; ?>
 
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
@@ -63,40 +71,32 @@ get_header(); ?>
 				<?php if ( get_theme_mod( 'bani_home_layout' ) == 'full' ) : ?>
 
 					<?php
-					/* Start the Loop */
-					$counter = 0;
-					$default_posts_per_page = get_option( 'posts_per_page' );
-
-					$subscribe_post_pos = rand(1, $default_posts_per_page);
-
 					while ( have_posts() ) : the_post();
 
 						get_template_part( 'template-parts/content', get_post_format() );
-
-						if ( $counter == $subscribe_post_pos ) {
-							if ( is_active_sidebar( 'sidebar-subscribe-post' ) ) : ?>
-								<div id="footer-instagram">
-									<?php dynamic_sidebar( 'sidebar-subscribe-post' ) ?>
-								</div>
-							<?php endif;
-						}
-
-						$counter++;
 
 					endwhile;
 					?>
 
 
-				<?php elseif ( get_theme_mod( 'bani_home_layout' ) == 'grid' ) : ?>
+				<?php elseif ( get_theme_mod( 'bani_home_layout' ) == 'masonry' ) : ?>
+
+					<div class="row">
+						<div class="card-columns">
+							<?php
+							while ( have_posts() ) : the_post();
+
+								get_template_part( 'template-parts/content', get_post_format() );
+
+							endwhile;
+							?>
+						</div>
+					</div>
+
+				<?php else : ?>
 
 					<div class="row">
 						<?php
-						/* Start the Loop */
-						$counter = 0;
-						$default_posts_per_page = get_option( 'posts_per_page' );
-
-						$subscribe_post_pos = rand(1, $default_posts_per_page);
-
 						while ( have_posts() ) : the_post(); ?>
 
 							<div class="col-md-6 grid-card">
@@ -105,58 +105,15 @@ get_header(); ?>
 
 							</div><!-- /.col-md-6 -->
 
-							<?php
-							if ( $counter == $subscribe_post_pos ) { ?>
-								<div class="col-md-6 grid-card">
-								<?php if ( is_active_sidebar( 'sidebar-subscribe-post' ) ) : ?>
-									<div id="footer-instagram">
-										<?php dynamic_sidebar( 'sidebar-subscribe-post' ) ?>
-									</div>
-								<?php endif; ?>
-								</div><!-- /.col-md-6 -->
-							<?php }
-
-							$counter++;
-
+						<?php
 						endwhile;
 						?>
-					</div>
-
-
-				<?php else : ?>
-
-					<div class="row">
-						<div class="card-columns">
-							<?php
-							/* Start the Loop */
-							$counter = 0;
-							$default_posts_per_page = get_option( 'posts_per_page' );
-
-							$subscribe_post_pos = rand(1, $default_posts_per_page);
-
-							while ( have_posts() ) : the_post();
-
-								get_template_part( 'template-parts/content', get_post_format() );
-
-								if ( $counter == $subscribe_post_pos ) {
-									if ( is_active_sidebar( 'sidebar-subscribe-post' ) ) : ?>
-										<div id="footer-instagram">
-											<?php dynamic_sidebar( 'sidebar-subscribe-post' ) ?>
-										</div>
-									<?php endif;
-								}
-
-								$counter++;
-
-							endwhile;
-							?>
-						</div>
 					</div>
 
 				<?php endif; ?>
 
 				<?php
-				the_posts_navigation();
+				bani_navigation();
 
 			else :
 

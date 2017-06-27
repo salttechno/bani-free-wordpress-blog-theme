@@ -9,7 +9,13 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php
+	$mesonryClass = '';
+	if ( get_theme_mod( 'bani_home_layout' ) == 'masonry' ) {
+		$mesonryClass = 'masonry-card';
+	}
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class($mesonryClass); ?>>
 
 	<div class="card bani-card">
 

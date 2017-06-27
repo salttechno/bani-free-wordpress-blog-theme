@@ -30,7 +30,7 @@
 						<?php if ( !get_theme_mod( 'bani_hide_social_icons_footer' ) ) : ?>
 						<div class="social-links-footer">
 							<ul class="d-flex justify-content-center">
-								<?php // bani_get_social_icons(); ?>
+								<?php bani_get_social_icons(); ?>
 							</ul>
 						</div>
 						<!-- /.social-links-footer -->

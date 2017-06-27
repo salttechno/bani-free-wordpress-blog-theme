@@ -36,7 +36,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			bani_navigation();
 
 		else :
 
