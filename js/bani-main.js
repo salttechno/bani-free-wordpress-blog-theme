@@ -2,6 +2,10 @@ jQuery(document).ready(function($) {
 
     "use strict";
 
+    $(".loading-screen").fadeOut('slow', function(){
+        $(".loading-screen").addClass('hide-screen');
+    });
+
     // For Fixed header & Scroll to top
 	$(window).on("scroll resize", function() {
 		if ($(window).scrollTop() >= 500) {

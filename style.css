@@ -16681,6 +16681,62 @@ li {
   padding: 1.5rem;
 }
 
+.admin-bar .fixed-top {
+  top: 32px;
+}
+
+blockquote {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  border: 0.25rem solid #F3F3F1;
+  border-left: 0.25rem solid #c4c4ba;
+}
+
+blockquote cite {
+  display: block;
+  font-size: 80%;
+  color: #636c72;
+}
+
+blockquote cite::before {
+  content: "\2014 \00A0";
+}
+
+blockquote p {
+  margin-bottom: 0;
+}
+
+q {
+  display: inline;
+}
+
+q:before {
+  content: '"';
+}
+
+q:after {
+  content: '"';
+}
+
+.sticky-icon {
+  display: none;
+}
+
+.sticky {
+  position: relative;
+}
+
+.sticky .sticky-icon {
+  position: absolute;
+  top: -2px;
+  left: 15px;
+  display: inline-block;
+  color: #8E847E;
+  text-align: center;
+  line-height: 1;
+}
+
 /*--------------------------------------------------------------
 # INDEX
 --------------------------------------------------------------*/
@@ -16865,6 +16921,8 @@ li {
 @media (max-width: 599px) {
   .main-navigation li {
     float: none;
+    display: block;
+    text-align: left;
   }
   .main-navigation ul ul {
     position: relative;
@@ -16883,7 +16941,24 @@ li {
   }
   button.menu-toggle.btn {
     margin: auto;
+    margin-bottom: 10px;
   }
+  .site-branding {
+    text-align: center;
+  }
+}
+
+/*--------------------------------------------------------------
+# INPUTS
+--------------------------------------------------------------*/
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea {
+  padding: 4px 10px;
+  border-color: #cac5c2;
+  font-size: 1rem;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
 }
 
 /*--------------------------------------------------------------
@@ -16902,6 +16977,10 @@ li {
 
 .bani-cover-wrapper.short-cover {
   min-height: 20vh;
+}
+
+.bani-cover-wrapper.page-cover {
+  min-height: 30vh;
 }
 
 .bani-cover-wrapper .bani-cover-bg {
@@ -16946,6 +17025,18 @@ li {
 .bani-cover-wrapper .bani-cover-content .title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+}
+
+.bani-cover-wrapper .bani-cover-content .entry-meta {
+  color: rgba(243, 243, 241, 0.75);
+}
+
+.bani-cover-wrapper .bani-cover-content .entry-meta a {
+  color: rgba(243, 243, 241, 0.75);
+}
+
+.bani-cover-wrapper .bani-cover-content .entry-meta a:hover {
+  color: #f3f3f1;
 }
 
 .typed-cursor {
@@ -17390,6 +17481,211 @@ li {
 
 #footer-instagram .instagram-widget p {
   display: none;
+}
+
+/*--------------------------------------------------------------
+# Loader
+--------------------------------------------------------------*/
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background: #F3F3F1;
+}
+
+.loading-screen.hide-screen {
+  display: none !important;
+}
+
+.loading-screen .spinner {
+  margin: auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.loading-screen .spinner > div {
+  background-color: #838384;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.loading-screen .spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.loading-screen .spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.loading-screen .spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.loading-screen .spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%,
+  100%,
+  40% {
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@keyframes sk-stretchdelay {
+  0%,
+  100%,
+  40% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+  }
+}
+
+/*--------------------------------------------------------------
+# COMMENTS
+--------------------------------------------------------------*/
+.comments-title {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.comment-list {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.bani-comment .comment-author {
+  /* font-size: 1rem; */
+  margin-bottom: 0;
+}
+
+.bani-comment .comment-author a {
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.bani-comment .date {
+  margin-bottom: 10px;
+  display: inline-block;
+  color: #8E847E;
+}
+
+.bani-comment .reply a {
+  font-family: "Bitter", serif;
+  color: #8E847E;
+}
+
+.bani-comment .bani-comment-by-author {
+  margin-left: 15px;
+  font-size: .7rem;
+}
+
+.comment-list .comment {
+  margin-bottom: 2rem;
+}
+
+.comment-list .comment.bypostauthor {
+  /* Comment or reply by post author */
+  padding: 15px;
+  background: #F3F3F1;
+  border-radius: 0.25rem;
+}
+
+.comment-list .children {
+  list-style: none;
+}
+
+.comment-list .fa-reply {
+  color: #8E847E;
+}
+
+.comment-awaiting {
+  margin-left: 15px;
+  font-size: .875rem;
+  color: #8E847E;
+}
+
+.comment-notes, .logged-in-as {
+  color: #8E847E;
+  font-size: .875rem;
+  text-align: center;
+  width: 100%;
+}
+
+.bani-reply-title {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.bani-cancel-reply a {
+  background: rgba(131, 131, 132, 0.9);
+  padding: .5rem 1rem;
+  font-size: .6rem;
+  margin-left: .75rem;
+  border-radius: 0.25rem;
+  color: #F3F3F1;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  letter-spacing: .5px;
+}
+
+.bani-cancel-reply a:hover {
+  background: #838384;
+}
+
+.comment-submit-btn {
+  cursor: pointer;
+  border: 0;
+}
+
+.comment p {
+  word-break: break-word;
+}
+
+.comment-form .form-control {
+  padding: .5rem .5rem;
+  font-family: "Bitter", serif;
+  font-size: .875rem;
+  border-color: #dbdbd6;
+}
+
+.comment-form .form-control:focus {
+  border-color: #b8b8ac;
+}
+
+.comment-form .btn {
+  font-size: .875rem;
+  border: 0;
+  border-radius: 4px;
+  color: #F3F3F1;
+  padding: 0.5rem 1rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-family: "Source Sans Pro", sans-serif;
+  letter-spacing: .5px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -15,14 +15,14 @@
 
 		<?php if ( has_post_thumbnail() ) : ?>
 	        <?php if ( !is_single() ) : ?>
-	    		<a href="<?php echo get_permalink() ?>" title="<?php the_title_attribute(); ?>" class="shreeja-thumb-link">
+	    		<a href="<?php echo get_permalink() ?>" title="<?php the_title_attribute(); ?>" class="bani-thumb-link">
 	                <?php the_post_thumbnail( 'post-thumbnail', ['class' => 'card-img-top d-block img-fluid w-100']); ?>
 	            </a>
 	        <?php endif; ?>
 		<?php else : ?>
-			<?php if ( get_theme_mod( 'shreeja_default_image_home' ) ) : ?>
+			<?php if ( get_theme_mod( 'bani_default_image_home' ) ) : ?>
 				<?php if ( !is_single() ) : ?>
-		    		<a href="<?php echo get_permalink() ?>" title="<?php the_title_attribute(); ?>" class="shreeja-thumb-link">
+		    		<a href="<?php echo get_permalink() ?>" title="<?php the_title_attribute(); ?>" class="bani-thumb-link">
 		                <img src="<?php echo get_template_directory_uri() . '/images/default-img.png'; ?>" alt="<?php the_title_attribute(); ?>" class="card-img-top d-block img-fluid w-100">
 		            </a>
 		        <?php endif; ?>
@@ -30,21 +30,20 @@
 		<?php endif; ?>
 
 		<div class="card-block">
+
+			<?php if ( ! is_singular() ) : ?>
 			<header class="entry-header">
 				<?php
-				if ( is_singular() ) :
-					the_title( '<h1 class="entry-title">', '</h1>' );
-				else :
-					the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
-				endif;
+
+				the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
 
 				if ( 'post' === get_post_type() ) : ?>
 				<div class="entry-meta">
 					<?php bani_posted_on(); ?>
 				</div><!-- .entry-meta -->
-				<?php
-				endif; ?>
+				<?php endif; ?>
 			</header><!-- .entry-header -->
+			<?php endif; ?>
 
 			<?php if ( is_single() ) : ?>
 				<div class="entry-content">
@@ -73,6 +72,13 @@
 					<?php the_excerpt(); ?>
 				</div><!--/.entry-->
 		    <?php endif; ?>
+
+			<?php if ( is_sticky() && !is_single() ) : ?>
+	            <div class="sticky-icon">
+	                <i class="fa fa-bookmark" title="<?php echo esc_html__( 'Sticky Post', 'bani' ) ?>"></i>
+	            </div>
+	            <!-- /.sticky-icon -->
+	        <?php endif; ?>
 		</div>
 
 		<footer class="entry-footer card-footer">

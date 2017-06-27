@@ -12,6 +12,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area col-md-3 shreeja-sidebar" role="complementary">
+<aside id="secondary" class="widget-area col-md-3 bani-sidebar" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

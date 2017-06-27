@@ -21,6 +21,17 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+	<div class="loading-screen d-flex align-items-center">
+		<div class="spinner">
+		  <div class="rect1"></div>
+		  <div class="rect2"></div>
+		  <div class="rect3"></div>
+		  <div class="rect4"></div>
+		  <div class="rect5"></div>
+		</div>
+	</div>
+
 	<div id="page" class="site">
 			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bani' ); ?></a>
 
@@ -28,7 +39,7 @@
 				<div class="container">
 					<header id="masthead" class="site-header row align-items-center" role="banner">
 
-							<div class="site-branding col-sm-6">
+							<div class="site-branding col-sm-3">
 
 								<?php if ( !get_theme_mod( 'bani_logo' ) ) : ?>
 

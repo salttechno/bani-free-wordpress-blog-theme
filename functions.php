@@ -37,7 +37,7 @@ function bani_setup() {
 	) );
 
 	add_theme_support( 'custom-background', apply_filters( 'bani_custom_background_args', array(
-		'default-color' => 'ffffff',
+		'default-color' => 'F3F3F1',
 		'default-image' => '',
 	) ) );
 
@@ -124,7 +124,11 @@ add_action( 'wp_enqueue_scripts', 'bani_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+ require get_template_directory() . '/inc/custom-header.php';
+
+
+// Custom comments
+require get_template_directory() . '/inc/custom-comments.php';
 
 /**
  * Custom template tags for this theme.
