@@ -51,10 +51,10 @@ get_header(); ?>
 
 					get_template_part( 'template-parts/content', get_post_format() );
 
-					// the_post_navigation();
-					if ( !get_theme_mod( 'bani_hide_related_posts' ) ) {
-						get_template_part( 'template-parts/related-posts' );
-					}
+					the_post_navigation();
+					//if ( !get_theme_mod( 'bani_hide_related_posts' ) ) {
+						//get_template_part( 'template-parts/related-posts' );
+					//}
 
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :

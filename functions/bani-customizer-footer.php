@@ -45,7 +45,7 @@ $wp_customize->add_control(
 
 /**
 * Footer Right Text
-*/
+
 $wp_customize->add_setting(
 	'bani_footer_text_right',
 	array(
@@ -67,7 +67,7 @@ $wp_customize->add_control(
 );
 
 
-
+*/
 /**
 * Hide Social Media Icons
 */

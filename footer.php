@@ -37,7 +37,7 @@
 						<?php endif; ?>
 					</div><!-- .site-info -->
 					<div class="col-md-4 site-info self-align-last text-right">
-						<h6 class="mb-0"><?php echo wp_kses_post(get_theme_mod('bani_footer_text_right', 'Site Built On <a href="https://wordpress.org">WordPress</a>')); ?></h6>
+						<h6 class="mb-0"><?php echo wp_kses_post(get_theme_mod('bani_footer_text_right', 'SITE BY <a href="https://themes.salttechno.com/">SALT TECHNO</a>')); ?></h6>
 					</div><!-- .site-info -->
 				</footer><!-- #colophon -->
 			</div>

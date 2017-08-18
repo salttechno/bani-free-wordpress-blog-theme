@@ -99,11 +99,11 @@ add_action( 'widgets_init', 'bani_widgets_init' );
 */
 function bani_scripts() {
 	wp_enqueue_style( 'bani-google-fonts', '//fonts.googleapis.com/css?family=Bitter:400,400i|Source+Sans+Pro' );
-	wp_enqueue_style( 'bani-swiper', get_template_directory_uri() . '/css/swiper.css' );
+	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/css/swiper.css' );
 	wp_enqueue_style( 'bani-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'bani-typed', get_template_directory_uri() . '/js/typed.min.js', array( 'jquery' ), '', true );
-	wp_enqueue_script( 'bani-swiper-js', get_template_directory_uri() . '/js/swiper.jquery.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'typed', get_template_directory_uri() . '/js/typed.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/js/swiper.jquery.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'bani-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'bani-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'bani-main', get_template_directory_uri() . '/js/bani-main.js', array( 'jquery' ), '', true );
@@ -148,6 +148,13 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
+// Custom functions that act independently of the theme templates.
+require get_template_directory() . '/inc/extras.php';
+
+require get_template_directory() . '/framework/tgm-plugins-registration.php';
+
+//Adding Custom CSS Styles to TinyMCE
+ add_editor_style( 'editor-style.css' );
 
 
 /**
@@ -157,18 +164,18 @@ require get_template_directory() . '/inc/jetpack.php';
 */
 // Get Social Links with icon
 function bani_get_social_icons() { ?>
-	<?php if(get_theme_mod('bani_facebook')) : ?><li class="social-item"><a href="<?php echo esc_html(get_theme_mod('bani_facebook')); ?>" target="_blank" class="nav-link"><i class="fa fa-facebook"></i></a></li><?php endif; ?>
-	<?php if(get_theme_mod('bani_twitter')) : ?><li class="social-item"><a href="<?php echo esc_html(get_theme_mod('bani_twitter')); ?>" target="_blank" class="nav-link"><i class="fa fa-twitter"></i></a></li><?php endif; ?>
-	<?php if(get_theme_mod('bani_instagram')) : ?><li class="social-item"><a href="<?php echo esc_html(get_theme_mod('bani_instagram')); ?>" target="_blank" class="nav-link"><i class="fa fa-instagram"></i></a></li><?php endif; ?>
-	<?php if(get_theme_mod('bani_pinterest')) : ?><li class="social-item"><a href="<?php echo esc_html(get_theme_mod('bani_pinterest')); ?>" target="_blank" class="nav-link"><i class="fa fa-pinterest"></i></a></li><?php endif; ?>
-	<?php if(get_theme_mod('bani_bloglovin')) : ?><li class="social-item"><a href="<?php echo esc_html(get_theme_mod('bani_bloglovin')); ?>" target="_blank" class="nav-link"><i class="fa fa-heart"></i></a></li><?php endif; ?>
-	<?php if(get_theme_mod('bani_google')) : ?><li class="social-item"><a href="<?php echo esc_html(get_theme_mod('bani_google')); ?>" target="_blank" class="nav-link"><i class="fa fa-google-plus"></i></a></li><?php endif; ?>
-	<?php if(get_theme_mod('bani_tumblr')) : ?><li class="social-item"><a href="<?php echo esc_html(get_theme_mod('bani_tumblr')); ?>" target="_blank" class="nav-link"><i class="fa fa-tumblr"></i></a></li><?php endif; ?>
-	<?php if(get_theme_mod('bani_youtube')) : ?><li class="social-item"><a href="<?php echo esc_html(get_theme_mod('bani_youtube')); ?>" target="_blank" class="nav-link"><i class="fa fa-youtube-play"></i></a></li><?php endif; ?>
-	<?php if(get_theme_mod('bani_dribbble')) : ?><li class="social-item"><a href="<?php echo esc_html(get_theme_mod('bani_dribbble')); ?>" target="_blank" class="nav-link"><i class="fa fa-dribbble"></i></a></li><?php endif; ?>
-	<?php if(get_theme_mod('bani_soundcloud')) : ?><li class="social-item"><a href="<?php echo esc_html(get_theme_mod('bani_soundcloud')); ?>" target="_blank" class="nav-link"><i class="fa fa-soundcloud"></i></a></li><?php endif; ?>
-	<?php if(get_theme_mod('bani_vimeo')) : ?><li class="social-item"><a href="<?php echo esc_html(get_theme_mod('bani_vimeo')); ?>" target="_blank" class="nav-link"><i class="fa fa-vimeo-square"></i></a></li><?php endif; ?>
-	<?php if(get_theme_mod('bani_linkedin')) : ?><li class="social-item"><a href="<?php echo esc_html(get_theme_mod('bani_linkedin')); ?>" target="_blank" class="nav-link"><i class="fa fa-linkedin"></i></a></li><?php endif; ?>
-	<?php if(get_theme_mod('bani_snapchat')) : ?><li class="social-item"><a href="<?php echo esc_html(get_theme_mod('bani_snapchat')); ?>" target="_blank" class="nav-link"><i class="fa fa-snapchat-ghost"></i></a></li><?php endif; ?>
+	<?php if(get_theme_mod('bani_facebook')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_facebook')); ?>" target="_blank" class="nav-link"><i class="fa fa-facebook"></i></a></li><?php endif; ?>
+	<?php if(get_theme_mod('bani_twitter')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_twitter')); ?>" target="_blank" class="nav-link"><i class="fa fa-twitter"></i></a></li><?php endif; ?>
+	<?php if(get_theme_mod('bani_instagram')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_instagram')); ?>" target="_blank" class="nav-link"><i class="fa fa-instagram"></i></a></li><?php endif; ?>
+	<?php if(get_theme_mod('bani_pinterest')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_pinterest')); ?>" target="_blank" class="nav-link"><i class="fa fa-pinterest"></i></a></li><?php endif; ?>
+	<?php if(get_theme_mod('bani_bloglovin')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_bloglovin')); ?>" target="_blank" class="nav-link"><i class="fa fa-heart"></i></a></li><?php endif; ?>
+	<?php if(get_theme_mod('bani_google')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_google')); ?>" target="_blank" class="nav-link"><i class="fa fa-google-plus"></i></a></li><?php endif; ?>
+	<?php if(get_theme_mod('bani_tumblr')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_tumblr')); ?>" target="_blank" class="nav-link"><i class="fa fa-tumblr"></i></a></li><?php endif; ?>
+	<?php if(get_theme_mod('bani_youtube')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_youtube')); ?>" target="_blank" class="nav-link"><i class="fa fa-youtube-play"></i></a></li><?php endif; ?>
+	<?php if(get_theme_mod('bani_dribbble')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_dribbble')); ?>" target="_blank" class="nav-link"><i class="fa fa-dribbble"></i></a></li><?php endif; ?>
+	<?php if(get_theme_mod('bani_soundcloud')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_soundcloud')); ?>" target="_blank" class="nav-link"><i class="fa fa-soundcloud"></i></a></li><?php endif; ?>
+	<?php if(get_theme_mod('bani_vimeo')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_vimeo')); ?>" target="_blank" class="nav-link"><i class="fa fa-vimeo-square"></i></a></li><?php endif; ?>
+	<?php if(get_theme_mod('bani_linkedin')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_linkedin')); ?>" target="_blank" class="nav-link"><i class="fa fa-linkedin"></i></a></li><?php endif; ?>
+	<?php if(get_theme_mod('bani_snapchat')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_snapchat')); ?>" target="_blank" class="nav-link"><i class="fa fa-snapchat-ghost"></i></a></li><?php endif; ?>
 	<?php if(get_theme_mod('bani_rss')) : ?><li class="social-item"><a href="<?php echo esc_url(get_theme_mod('bani_rss')); ?>" target="_blank" class="nav-link"><i class="fa fa-rss"></i></a></li><?php endif; ?>
 <?php }

@@ -1,11 +1,11 @@
 @charset "UTF-8";
 /*!
 Theme Name: Bani
-Theme URI: http://underscores.me/
+Theme URI: https://themes.salttechno.com/downloads/bani/
 Author: SaltTechno
-Author URI: http://www.salttechno.com
+Author URI: https://themes.salttechno.com
 Description: Modern, clean & elegant WordPress blog theme.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: bani
@@ -17831,6 +17831,25 @@ button, input, optgroup, select, textarea {
   text-transform: uppercase;
   font-family: "Source Sans Pro", sans-serif;
   letter-spacing: .5px;
+}
+.post-navigation .nav-previous a{
+  background: #fff;
+padding: 6px 20px;
+display: inline-block;
+border-radius: 6px;
+box-shadow: 0 10px 20px -6px rgba(0,0,0,.3);
+transition: color .4s ease;
+}
+.post-navigation .nav-next a{
+background: #fff;
+padding: 6px 20px;
+display: inline-block;
+border-radius: 6px;
+box-shadow: 0 10px 20px -6px rgba(0,0,0,.3);
+transition: color .4s ease;
+}
+.post-password-form input[type="submit"]{
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

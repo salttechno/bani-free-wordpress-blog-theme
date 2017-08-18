@@ -1,0 +1,36 @@
+.bani-help-bar {
+  background: #1e88e5 !important;
+  margin-right: 10px !important;
+}
+
+.bani-help-bar a {
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+}
+
+.bani-help-bar a:before {
+  content: "\f468";
+  top: 2px;
+}
+
+.bani-about-next-icon {
+  color: #82878c;
+  padding: 0 10px 0 0;
+  vertical-align: middle;
+}
+
+.bani-wrap h2, .bani-wrap h3 {
+  letter-spacing: .25px;
+}
+
+.bani-text-center {
+  text-align: center;
+}
+
+.bani-d-iblock {
+  display: inline-block;
+}
+
+.img-responsive {
+    max-width: 100%;
+}

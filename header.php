@@ -84,6 +84,20 @@
 				</div><!-- /.container -->
 			</div><!-- /.st-header-area -->
 
+				<?php if ( get_header_image() ) : ?>
+					<style media="screen">
+						.st-header-area {
+							background-image: url('<?php header_image(); ?>');
+							background-repeat: no-repeat  !important;
+							background-position: 50% 50%;
+							-webkit-background-size: cover;
+							-moz-background-size:    cover;
+							-o-background-size:      cover;
+							background-size:         cover;
+						}
+					</style>
+	            <?php endif; ?>
+
 			<div class="st-content-area">
 				<div class="container">
 					<div id="content" class="site-content row">

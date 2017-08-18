@@ -13,7 +13,11 @@ if ( ! function_exists( 'bani_comments' ) ) {
     	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
 
             <div class="media bani-comment">
-                <img class="d-flex align-self-start mr-3 comment-img rounded" src="<?php echo get_avatar_url( $comment ); ?>" alt="" width="60">
+                <?php if (! empty(get_avatar_url( $comment ) )) : ?>
+                    <img class="d-flex align-self-start mr-3 comment-img rounded" src="<?php echo get_avatar_url( $comment ); ?>" alt="" width="60">
+                <?php else : ?>
+                    <img class="d-flex align-self-start mr-3 comment-img rounded" src="<?php echo get_template_directory_uri() . '/images/default-img.png'; ?>" alt="" width="60">
+                <?php endif; ?>
                 <div class="media-body">
                     <h6 class="mt-0 comment-author">
                         <?php echo get_comment_author_link(); ?>
