@@ -17133,6 +17133,12 @@ button, input, optgroup, select, textarea {
   }
 }
 
+@media (max-width: 600px) {
+  .bani-cover-wrapper {
+    min-height: 70vh;
+  }
+}
+
 /*--------------------------------------------------------------
 # Featured
 --------------------------------------------------------------*/
@@ -17542,7 +17548,7 @@ button, input, optgroup, select, textarea {
 }
 
 .st-footer-area > .container {
-  padding: 2rem 0;
+  padding: 2rem 15px;
 }
 
 .st-footer-area h6 {
@@ -17591,6 +17597,12 @@ button, input, optgroup, select, textarea {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
   cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .st-footer-area > .container .col-md-4 {
+    text-align: center !important;
+  }
 }
 
 #footer-instagram .instagram-widget .instagram-title {

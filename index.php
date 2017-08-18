@@ -45,7 +45,7 @@ get_header(); ?>
 	<?php get_sidebar(); ?>
 <?php endif; ?>
 
-	<div class="st-primary-wrapper post-hover-effect <?php if ( get_theme_mod( 'bani_full_width_home' ) ) : echo 'col-md-12'; else : echo 'col-md-9'; endif; ?>">
+	<div class="st-primary-wrapper post-hover-effect <?php if ( get_theme_mod( 'bani_full_width_home' ) ) : echo 'col-lg-12'; else : echo 'col-lg-9'; endif; ?>">
 
 		<?php if ( is_home() ) : ?>
 			<?php if( ! get_theme_mod( 'bani_hide_featured_posts' ) ) : ?>

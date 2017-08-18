@@ -418,6 +418,12 @@ button, input, optgroup, select, textarea {
 	50% { opacity:0; }
 	100% { opacity:1; }
 }
+@media (max-width: 600px) {
+    .bani-cover-wrapper {
+        min-height: 70vh;
+    }
+}
+
 
 
 
@@ -781,7 +787,7 @@ button, input, optgroup, select, textarea {
     background: $color__dark_shade;
     color: rgba(255, 255, 255, 0.5);
     >.container {
-        padding: 2rem 0;
+        padding: 2rem 15px;
     }
     h6 {
         font-size: .75rem;
@@ -823,6 +829,13 @@ button, input, optgroup, select, textarea {
         border-radius: 50%;
         transition: all 0.4s ease;
         cursor: pointer;
+    }
+}
+@media (max-width: 767px) {
+    .st-footer-area > .container {
+        .col-md-4 {
+            text-align: center !important;
+        }
     }
 }
 #footer-instagram {

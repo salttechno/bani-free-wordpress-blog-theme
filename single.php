@@ -43,7 +43,7 @@ get_header(); ?>
 		}
  	?>
 
-	<div class="st-primary-wrapper <?php if ( get_theme_mod( 'bani_full_width_post' ) ) : echo 'col-md-12'; else : echo 'col-md-9'; endif; ?>">
+	<div class="st-primary-wrapper <?php if ( get_theme_mod( 'bani_full_width_post' ) ) : echo 'col-md-12'; else : echo 'col-lg-9'; endif; ?>">
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 
