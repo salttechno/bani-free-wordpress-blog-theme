@@ -1,7 +1,7 @@
 ## LICENSE
 
-Shuban WordPress Blog Theme, Copyright 2017 SaltTechno
-Shuban is distributed under the terms of the GNU GPL
+Bani WordPress Blog Theme, Copyright 2017 SaltTechno
+Bani is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,10 +16,10 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see http://www.gnu.org/licenses/gpl.html.
 
-Shuban WordPress Blog Theme is derived from Underscores WordPress Theme, (C) 2012-2016 Automattic, Inc
+Bani WordPress Blog Theme is derived from Underscores WordPress Theme, (C) 2012-2016 Automattic, Inc
 Underscores WordPress Theme is distributed under the terms of the GNU GPL
 
-Shuban WordPress Theme bundles the following third-party resources:
+Bani WordPress Theme bundles the following third-party resources:
 
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)

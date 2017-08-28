@@ -759,6 +759,21 @@ q:after {
   padding: 0 15px;
 }
 
+.bani-help-bar {
+  background: #1e88e5 !important;
+  margin-right: 10px !important;
+}
+
+.bani-help-bar a {
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+}
+
+.bani-help-bar a:before {
+  content: "\f468";
+  top: 2px;
+}
+
 @media (min-width: 576px) and (max-width: 767px) {
   .card-columns {
     -webkit-column-count: 1;
