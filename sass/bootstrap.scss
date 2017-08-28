@@ -1,0 +1,20 @@
+// custom variables
+$font-family-base: 'Source Sans Pro', sans-serif;
+$headings-font-family: 'Bitter', serif;
+$headings-font-weight: 400;
+$body-color: #272B30;
+
+$blue: #8E847E;
+
+$font-size-base: 1.1rem;
+$line-height-base: 1.6;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1280px
+);
+
+// import bootstrap 4
+@import "bootstrap/bootstrap";

@@ -9,14 +9,14 @@
 
 get_header(); ?>
 
-    <div class="bani-cover-wrapper <?php if ( ! has_post_thumbnail() ) : ?> short-cover <?php else : ?> page-cover <?php endif; ?>">
-	<div class="bani-cover-bg" <?php if ( has_post_thumbnail() ) : ?> style="background-image: url(<?php echo the_post_thumbnail_url(); ?>); -webkit-filter: brightness(35%); filter: brightness(35%);" <?php endif; ?>></div><!-- /.bani-cover -->
-		<div class="bani-cover-content row align-items-center justify-content-center">
-			<div class="col-md-6 bani-content-height">
-				<h1 class="entry-title"><?php esc_html_e( '404 Page', 'bani' ); ?></h1>
-			</div><!-- /.col -->
-		</div><!-- /.bani-cover-content -->
-    </div>
+<div class="bani-cover-wrapper <?php if ( ! has_post_thumbnail() ) : ?> short-cover <?php else : ?> page-cover <?php endif; ?>">
+    <div class="bani-cover-bg" <?php if ( has_post_thumbnail() ) : ?> style="background-image: url(<?php echo esc_url( the_post_thumbnail_url() ); ?>); -webkit-filter: brightness(35%); filter: brightness(35%);" <?php endif; ?>></div><!-- /.bani-cover -->
+	<div class="bani-cover-content row align-items-center justify-content-center">
+		<div class="col-md-6 bani-content-height">
+			<h1 class="entry-title"><?php esc_html_e( '404 Page', 'bani' ); ?></h1>
+		</div><!-- /.col -->
+	</div><!-- /.bani-cover-content -->
+</div>
 
 <div class="st-primary-wrapper col-lg-9">
 	<div id="primary" class="content-area">
@@ -74,6 +74,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 </div><!-- .st-primary-wrapper -->
 <?php
-get_sidebar(); 
+get_sidebar();
 get_footer();
-

@@ -52,9 +52,9 @@
 								<?php else : ?>
 
 									<?php if(is_front_page()) : ?>
-										<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url(get_theme_mod('bani_logo')); ?>" alt="<?php bloginfo( 'name' ); ?>" class="bani-logo-img" height="<?php if ( get_theme_mod( 'bani_logo_height' ) ) : echo get_theme_mod( 'bani_logo_height' ); endif; ?>" /></a></h1>
+										<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod('bani_logo') ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="bani-logo-img" height="<?php if ( get_theme_mod( 'bani_logo_height' ) ) : echo get_theme_mod( 'bani_logo_height' ); endif; ?>" /></a></h1>
 									<?php else : ?>
-										<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url(get_theme_mod('bani_logo')); ?>" alt="<?php bloginfo( 'name' ); ?>" class="bani-logo-img" height="<?php if ( get_theme_mod( 'bani_logo_height' ) ) : echo get_theme_mod( 'bani_logo_height' ); endif; ?>" /></a></h2>
+										<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod('bani_logo') ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="bani-logo-img" height="<?php if ( get_theme_mod( 'bani_logo_height' ) ) : echo get_theme_mod( 'bani_logo_height' ); endif; ?>" /></a></h2>
 									<?php endif; ?>
 
 								<?php endif; ?>

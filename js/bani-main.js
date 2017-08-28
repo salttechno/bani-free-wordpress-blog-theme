@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
     });
 
     // Initialize typed js
-    $("#typed").typed({
+    var typed = new Typed("#typed", {
 		stringsElement: document.getElementById('typed-strings'),
         typeSpeed: 100,
 		backSpeed: 50,

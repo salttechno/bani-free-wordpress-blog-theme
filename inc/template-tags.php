@@ -66,9 +66,9 @@ function bani_entry_footer() {
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link bani-comments-link float-right">';
 		comments_popup_link(
-			'0 <i class="icon ion-chatboxes"></i>',
-			'1 <i class="icon ion-chatboxes"></i>',
-			'% <i class="icon ion-chatboxes"></i>'
+			'0 <i class="icon fa fa-comments-o"></i>',
+			'1 <i class="icon fa fa-comments-o"></i>',
+			'% <i class="icon fa fa-comments-o"></i>'
 		);
 		echo '</span>';
 	}
