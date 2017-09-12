@@ -4,7 +4,7 @@ Theme Name: Bani
 Theme URI: https://themes.salttechno.com/wordpress-theme/bani-free-blog-theme
 Author: SaltTechno
 Author URI: https://themes.salttechno.com
-Description: Modern, clean & elegant WordPress blog theme.
+Description: Modern, clean & elegant WordPress blog theme. The theme is designed with the classic elegance to keep your reader/website visitor more focused on the content & images. Our professional designers have kept the design simple yet eye-pleasing. We have added customizable slider for featured posts at the top.
 Version: 1.0.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -1113,7 +1113,7 @@ button, input, optgroup, select, textarea {
 
 @media (max-width: 600px) {
   .bani-cover-wrapper {
-    min-height: 70vh;
+    min-height: 50vh;
   }
 }
 
@@ -1812,22 +1812,36 @@ button, input, optgroup, select, textarea {
 }
 .post-navigation .nav-previous a{
   background: #fff;
-padding: 6px 20px;
-display: inline-block;
-border-radius: 6px;
-box-shadow: 0 10px 20px -6px rgba(0,0,0,.3);
-transition: color .4s ease;
+    padding: 6px 20px;
+    display: inline-block;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px -6px rgba(0,0,0,.3);
+    transition: color .4s ease;
 }
 .post-navigation .nav-next a{
-background: #fff;
-padding: 6px 20px;
-display: inline-block;
-border-radius: 6px;
-box-shadow: 0 10px 20px -6px rgba(0,0,0,.3);
-transition: color .4s ease;
+    background: #fff;
+    padding: 6px 20px;
+    display: inline-block;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px -6px rgba(0,0,0,.3);
+    transition: color .4s ease;
 }
 .post-password-form input[type="submit"]{
   font-size: 1rem;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*--------------------------------------------------------------
+# MEDIA QUERIES
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+    .fixed-top {
+        position: relative;
+    }
+    .admin-bar .fixed-top {
+        top: 0 !important;
+    }
+    .st-content-area {
+        margin-top: 0 !important;
+    }
+
+}

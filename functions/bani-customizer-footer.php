@@ -24,7 +24,7 @@ $wp_customize->add_section( 'bani_footer_section' , array(
 $wp_customize->add_setting(
 	'bani_footer_text_left',
 	array(
-		'default'     => esc_html__( '(c) COPYRIGHT 2017 - ALL RIGHTS RESERVED', 'bani' ),
+		'default'     => esc_html__( '(c) Copyright 2017 - All Rights Reserved', 'bani' ),
 		'sanitize_callback'     => 'wp_kses_post'
 	)
 );
@@ -43,31 +43,7 @@ $wp_customize->add_control(
 
 
 
-/**
-* Footer Right Text
 
-$wp_customize->add_setting(
-	'bani_footer_text_right',
-	array(
-		'default'     => esc_html__( 'Site Built On <a href="https://wordpress.org">WordPress</a>', 'bani' ),
-		'sanitize_callback'     => 'wp_kses_post'
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Control(
-		$wp_customize,
-		'bani_footer_text_right',
-		array(
-			'label'      => esc_html__( 'Footer Text Right', 'bani' ),
-			'section'    => 'bani_footer_section',
-			'settings'   => 'bani_footer_text_right',
-			'type'		 => 'text'
-		)
-	)
-);
-
-
-*/
 /**
 * Hide Social Media Icons
 */

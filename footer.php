@@ -24,7 +24,7 @@
 			<div class="container">
 				<footer id="colophon" class="site-footer row align-items-center" role="contentinfo">
 					<div class="col-md-4 site-info self-align-first">
-						<h6 class="mb-0"><?php echo wp_kses_post(get_theme_mod('bani_footer_text_left', '&copy; Copyright 2017 - All Rights Reserved')); ?></h6>
+						<h6 class="mb-0"><?php echo wp_kses_post(get_theme_mod('bani_footer_text_left', '(c) Copyright 2017 - All Rights Reserved')); ?></h6>
 					</div><!-- .site-info -->
 					<div class="col-md-4 text-center site-info">
 						<?php if ( !get_theme_mod( 'bani_hide_social_icons_footer' ) ) : ?>
@@ -37,7 +37,7 @@
 						<?php endif; ?>
 					</div><!-- .site-info -->
 					<div class="col-md-4 site-info self-align-last text-right">
-						<h6 class="mb-0"><?php echo wp_kses_post(get_theme_mod('bani_footer_text_right', 'SITE BY <a href="https://themes.salttechno.com/">SALT TECHNO</a>')); ?></h6>
+						<h6 class="mb-0"><?php echo wp_kses_post(get_theme_mod('bani_footer_text_right', '<a href="https://themes.salttechno.com/">WordPress Blog Themes</a> by SALT TECHNO')); ?></h6>
 					</div><!-- .site-info -->
 				</footer><!-- #colophon -->
 			</div>
