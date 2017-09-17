@@ -1,6 +1,7 @@
 == Changelog ==
 
-= 1.0.3 - Aug 28 2017 =
+= 1.0.3 - Sept 17 2017 =
+* Remove 'Instagram' from sidebar name
 * Optimize style.css
 * Update Bootstrap version
 

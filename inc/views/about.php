@@ -65,7 +65,7 @@
 
             <div class="welcome-panel-column-container">
                 <div class="welcome-panel-column" >
-                    <img src="<?php echo get_template_directory_uri() ?>/images/banipro-screenshot-600.jpg" alt="" style="max-width:90%;margin:15px;border-radius:4px;">
+                    <img src="https://bani.themesease.com/wp-content/uploads/2017/09/screenshot.png" alt="" style="max-width:90%;margin:15px;border-radius:4px;">
                 </div>
                 <!-- /.welcome-panel-column -->
 

@@ -78,7 +78,7 @@ function bani_widgets_init() {
 		'after_title'   => '</h5>',
 	) );
     register_sidebar(array(
-		'name' => esc_html__('Instagram Footer', 'bani'),
+		'name' => esc_html__('Footer', 'bani'),
 		'id' => 'sidebar-footer',
 		'before_widget' => '<div id="%1$s" class="instagram-widget %2$s">',
 		'after_widget' => '</div>',
